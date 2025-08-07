@@ -4,11 +4,11 @@ type
     data1:integer;
     data2:string;
   end;
-  nodo = record
+  node = record
     data: twodata;
     next: list;
   end;
-  list = ^nodo;
+  list = ^node;
 procedure readDatas(var da:twodatas);
 begin
   readln(da.data1);
@@ -20,15 +20,15 @@ var
   nw:list;
 begin
   new(nw);
-  nw.data:=d;
-  nw.next:=nil;
+  nw^.data:=d;
+  nw^.next:=nil;
   if (L=nil) then
   begin
     L:= nw;
   end
   else
     begin
-      LST.next:=nw;
+      LST^.next:=nw;
     end;
   LST:=nw;
 end;
