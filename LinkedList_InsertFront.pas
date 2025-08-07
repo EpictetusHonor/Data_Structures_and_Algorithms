@@ -4,12 +4,12 @@ type
     data1:integer;
     data2:string;
   end;
-  list = ^nodo;
   nodo = record
     data: twodata;
-    sig: list;
+    next: list;
   end;
-procedure readDatas(da:twodatas);
+  list = ^nodo;
+procedure readDatas(da:twodata);
 begin
   readln(da.data1);
   if da.data1 <> 0 then 
@@ -20,8 +20,8 @@ var
   nw:list;
 begin
   new(nw);
-  nw.data:=d;
-  nw.sig=L;
+  nw^.data:=d;
+  nw^.next=L;
   L:=nw;
 end;
 procedure chargeListFront(var L:list);
