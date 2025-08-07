@@ -78,7 +78,7 @@ begin
   
   if (count>=2) then
   begin
-    writeln('The minimums numbers are:);
+    writeln('The minimums numbers are:');
     writeln('Most minimum: ', min.min1);
     writeln('The second: ', min.min2);
   end
