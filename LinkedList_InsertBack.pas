@@ -1,51 +1,53 @@
-program LinkedList_InsertTraverse;
+program LinkedList_InsertBack;
 type
   twodata = record
     data1:integer;
     data2:string;
   end;
-  list = ^nodo;
   nodo = record
     data: twodata;
-    sig: list;
+    next: list;
   end;
-procedure readDatas(da:twodatas);
+  list = ^nodo;
+procedure readDatas(var da:twodatas);
 begin
   readln(da.data1);
   if da.data1 <> 0 then 
     readln(da.data2);
 end;
-procedure addTraverse(var L:list;d:twodata);
+procedure addBack(var L,LST:list;d:twodata);
 var
   nw:list;
 begin
   new(nw);
   nw.data:=d;
-  nw.sig:=nil;
+  nw.next:=nil;
   if (L=nil) then
   begin
     L:= nw;
   end
   else
     begin
-      
+      LST.next:=nw;
     end;
+  LST:=nw;
 end;
-procedure chargeListTraverse(L:list);
+procedure chargeListBack(var L,LAST:list);
 var
   d:twodatas;
 begin
   readDatas(d);
   while (d.data1<>0) do
   begin
-    addTraverse(L,d);
+    addBack(L,LAST,d);
     readDatas(d);
   end;
 end;
 var
-  Li:list;
+  Li,LAST:list;
   datas:twodata;
 begin
   Li:=nil; // the first node begins in not space in dinamic memory.
-  chargeListTraverse(Li);
+  LAST:=nil;
+  chargeListBack(Li,LAST);
 end.
