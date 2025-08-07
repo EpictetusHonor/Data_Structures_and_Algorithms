@@ -1,10 +1,10 @@
 program Two_Maximum_Minimum;
 type
-  maximums = record;
+  maximums = record
     max1:integer;
     max2:integer;
   end;
-  minimums = record;
+  minimums = record
     min1:integer;
     min2:integer;
   end;
@@ -19,6 +19,19 @@ begin
   begin
       	if num >= m.max2 then
           m.max2:=num;
+  end;
+end;
+procedure minimum(var m:minimums;num:integer);
+begin
+  if (num <= m.min1) then
+  begin
+    m.min2:=m.min1;
+    m.min1:=num;
+  end
+  else
+  begin
+      	if (num <= m.min2) then
+          m.min2:=num;
   end;
 end;
 procedure maximumprogram;
@@ -54,7 +67,7 @@ begin
     else
     begin
       if (count=1) then
-        writeln('You putted only one number: ',max.max1);
+        writeln('You entered only one number: ',max.max1);
     end;
   end;
 end;
@@ -71,7 +84,7 @@ begin
   count:=0;
   while (number<>32767) do
   begin
-    maximum(min,number);
+    manimum(min,number);
     readln(number);
     count:=count+1;
   end;
@@ -91,7 +104,7 @@ begin
     else
     begin
       if (count=1) then
-        writeln('You putted only one number: ',min.min1);
+        writeln('You entered only one number: ',min.min1);
     end;
   end;
 end;
