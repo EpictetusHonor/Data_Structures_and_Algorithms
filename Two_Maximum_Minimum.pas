@@ -16,7 +16,6 @@ begin
       	if num >= m.max2 then
           m.max2:=num;
   end;
-  maximums:=m;
 end;
 var
   max:maximums;
@@ -50,7 +49,7 @@ begin
     else
     begin
       if (count=1) then
-        writeln('You putted only one number.);
+        writeln('You putted only one number: ',max.max1);
     end;
   end;
 end;
