@@ -41,7 +41,7 @@ begin
   
   if (count>=2) then
   begin
-    writeln('The maximums numbers are:);
+    writeln('The maximums numbers are:');
     writeln('First: ', max.max1);
     writeln('Second: ', max.max2);
   end
