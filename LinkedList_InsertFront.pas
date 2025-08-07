@@ -4,11 +4,11 @@ type
     data1:integer;
     data2:string;
   end;
-  nodo = record
+  node = record
     data: twodata;
     next: list;
   end;
-  list = ^nodo;
+  list = ^node;
 procedure readDatas(da:twodata);
 begin
   readln(da.data1);
