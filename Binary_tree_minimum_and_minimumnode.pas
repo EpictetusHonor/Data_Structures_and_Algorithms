@@ -41,7 +41,7 @@ begin
 		if (t^.cl=nil) then
 			minimum:= t^.data;
 		else
-			minimum:= minimum(t^.cl,min);
+			minimum:= minimum(t^.cl,minimum);
 	end;
 end;
 function minimumnode(t:tree):tree;
@@ -55,7 +55,7 @@ begin
 			if (t^.cl=nil) then
 				minimumnode:= t;
 			else
-				minimumnode:= minimum(t^.cl,min);
+				minimumnode:= minimumnode(t^.cl,mininimumnode);
 		end;
 	end;
 end;
@@ -64,7 +64,7 @@ var
 	minim,num:integer;
 begin
 	tr:=nil;
-  chargetree(tr,num);
+  	chargetree(tr,num);
 	minim:=minimum(tr);
 	minimnode:=minimumnode(tr);
 	writeln(minim);
