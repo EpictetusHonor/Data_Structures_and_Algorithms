@@ -26,12 +26,12 @@ end;
 procedure chargetree(abb:tree;num:integer);
 begin
 	writeln('write some number: (50 stop the process)');
-  readln(num);
+  	readln(num);
 	while (num<>50) do
 	begin
 		add(abb,num);
 		writeln('write some number: (50 stop the process)');
-    readln(num);
+   		readln(num);
 	end;
  end;
 function maximum (t:tree):integer;
@@ -55,7 +55,7 @@ begin
 			if (t^.cr=nil) then
 				maximumnode:= t;
 			else
-				maximumnode:= maximum(t^.cr,maximumnode);
+				maximumnode:= maximumnode(t^.cr,maximumnode);
 		end;
 	end;
 end;
@@ -64,7 +64,7 @@ var
 	maxim,num:integer;
 begin
 	tr:=nil;
-  chargetree(tr,num);
+  	chargetree(tr,num);
 	maxim:=maximum(tr);
 	maximnode:=maximumnode(tr);
 	writeln(maxim);
