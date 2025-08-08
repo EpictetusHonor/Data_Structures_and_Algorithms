@@ -26,12 +26,12 @@ end;
 procedure chargetree(abb:tree;num:integer);
 begin
 	writeln('write some number: (50 stop the process)');
-  readln(num);
+  	readln(num);
 	while (num<>50) do
 	begin
 		add(abb,num);
 		writeln('write some number: (50 stop the process)');
-    readln(num);
+    	readln(num);
 	end;
  end;
 function minimum (t:tree):integer;
