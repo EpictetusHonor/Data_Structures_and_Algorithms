@@ -1,0 +1,5 @@
+program insert_sorted;
+
+var
+  nue:list;
+  act,ant:list;
