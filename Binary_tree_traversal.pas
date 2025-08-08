@@ -20,7 +20,7 @@ begin
 		if (t^.data<=n) then
 			add(t^.cl,n);
 		else
-			agregar(t^.cr,n);
+			add(t^.cr,n);
 	end;
 end;
 //procedure preorder(t:tree);
@@ -32,22 +32,22 @@ end;
 		//preorder(t^.cr);
 	//end;
 //end;
-//procedure postorder(t:treee);
+//procedure postorder(t:tree);
 //begin
 	//if (t<>nil) then
 	//begin
-		//postorden(t^.cl);
-		//postorden(t^.cr);
+		//postorder(t^.cl);
+		//postorder(t^.cr);
 		//writeln(t^.data);
 	//end;
 //end;
 
-procedure enOrden(t:tree);
+procedure inOrder(t:tree);
 begin
 	if (t<>nil) then begin
-		enOrden(t^.cl);
+		inOrder(t^.cl);
 		writeln(t^.data);
-		enOrden(t^.cr);
+		inOrder(t^.cr);
 	end;
 end;
 var
@@ -55,13 +55,13 @@ var
  	num:integer;
 begin
 	trees:=nil;
-	read(num);
+	readln(num);
 	while (num<>50) do
 	begin
 		add(trees,num);
-		read(num);
+		readln(num);
 	end;
-	enOrden(a);
-  //postorden(a);
-  //preorden(a);
-end;
+	inOrder(a);
+  //postorder(a);
+  //preorder(a);
+end.
