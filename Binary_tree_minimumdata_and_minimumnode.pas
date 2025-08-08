@@ -69,4 +69,4 @@ begin
 	minimnode:=minimumnode(tr);
 	writeln(minim);
 	writeln(minimnode);
-end;
+end.
